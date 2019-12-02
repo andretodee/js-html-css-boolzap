@@ -1,0 +1,211 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  background-color: grey;
+}
+
+#container{
+  width: 80%;
+  height: 95%;
+  margin: auto;
+  display: flex;
+}
+
+#left-side{
+  width: 35%;
+  height: 100%;
+}
+
+#right-side{
+  width: 65%;
+  height: 100%;
+  background-color: green;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.left-top, .right-top, .left-blue{
+  width: 100%;
+  height: 70px;
+}
+
+.left-top{
+  background-color: lightgrey;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-right: 1px solid grey
+}
+
+.left-top img{
+  height: 80%;
+  margin-left: 5px;
+}
+
+i{
+  color: grey;
+  font-size: 25px;
+  margin-right:15px;
+}
+
+i:hover{
+  cursor: pointer;
+}
+
+.left-blue{
+  background-color: lightblue;
+}
+
+.left-search{
+  width: 100%;
+  height: 50px;
+  background-color: lightgrey;
+  display: flex;
+  padding: 10px;
+}
+
+.left-search-icon{
+  background-color: white;
+  width: 10%;
+  height: 90%;
+  border-right: 1px solid lightgrey;
+}
+
+.left-search-icon i{
+  color: grey;
+  font-size: 15px;
+  margin-top: 7px;
+  margin-left: 15px;
+}
+
+.left-search-text{
+  background-color: white;
+  width: 90%;
+  height: 95%;
+  border-left: 1px solid lightgrey;
+}
+
+.left-search-text input{
+  margin-left: 15px;
+  margin-top: 7px;
+}
+
+.friends{
+  width: 100%;
+  height: calc(100% - 190px);
+  background-color: white;
+}
+
+.name{
+  width: 100%;
+  height: 70px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid lightgrey;
+}
+
+.name:hover{
+  background-color: lightgrey;
+}
+
+.name-text{
+  height: 70px;
+  display: flex;
+  align-items: center;
+}
+
+
+.name-text img{
+  height: 80%;
+  margin-left: 15px;
+}
+
+.name-text, .name-text-due{
+  margin-left: 20px;
+}
+
+.name-text h3{
+  text-transform: none;
+}
+
+.name-time{
+  margin-right: 10px;
+}
+
+.name-text p, .name-time p{
+  color: grey;
+  font-size: 15px;
+}
+
+.right-top{
+  background-color: lightgrey;
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+}
+
+.chat-container{
+  width: 80%;
+  height: 70%;
+  margin: auto;
+}
+
+.recived,.sent{
+  width: 200px;
+  height: auto;
+  border-radius: 5px;
+  padding: 20px;
+  clear: both;
+}
+
+.recived{
+  background-color: white;
+  float:left;
+  display: none;
+}
+
+.recived.active{
+  display: block;
+}
+
+.sent.active{
+  display: block;
+}
+
+.sent{
+  background-color: lightgreen;
+  float: right;
+  display: none;
+}
+
+.right-bottom{
+  width: 100%;
+  height: 70px;
+  background-color: lightgrey;
+  display: flex;
+}
+
+.right-bottom-text{
+  background-color: white;
+  height: 70%;
+  width: 85%;
+  margin: auto;
+}
+
+.right-bottom-text input{
+  padding: 10px;
+}
+
+.right-bottom i{
+  margin: 25px;
+}
