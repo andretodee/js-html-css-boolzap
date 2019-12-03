@@ -94,8 +94,8 @@ i:hover{
 }
 
 .left-search-text input{
-  margin-left: 15px;
-  margin-top: 7px;
+  width: 100%;
+  height: 100%;
 }
 
 .friends{
@@ -166,25 +166,28 @@ i:hover{
   border-radius: 5px;
   padding: 20px;
   clear: both;
+  margin-top: 10px;
 }
 
 .recived{
   background-color: white;
   float:left;
+}
+
+.recived.answer{
   display: none;
 }
 
-.recived.active{
+.active{
   display: block;
 }
 
-.sent.active{
-  display: block;
-}
-
-.sent{
+.sent {
   background-color: lightgreen;
   float: right;
+}
+
+.template{
   display: none;
 }
 
@@ -204,6 +207,8 @@ i:hover{
 
 .right-bottom-text input{
   padding: 10px;
+  height: 100%;
+  width: 100%;
 }
 
 .right-bottom i{
