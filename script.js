@@ -27,43 +27,53 @@ $(document).ready(function(){
       //resetto l'input con una stringa vuota
       var testoMessaggio = $(".right-bottom-text input").val("");
 
-      setTimeOut(function(){
-        $(".answer").addClass(".active");
-
-      }, 3000);
+      setTimeOut(rispostaComputer, 3000);
     }
 
-  };
+
   });
+
+
     //trovo il click
-  $(".ricerca").click(function(){
+  $(".input-text-left").keyup(function(){
     //recupero il testo inserito nella ricerca
-    var nome =$(".input-text-left").val();
+    var nome = $(this).val();
     console.log(nome);
     if(nome.length != 0){
 
-      $(".contact").each(function(){
+      $(".name").each(function(){
         //ricavo il nome ricercato
-        var nomeContact = $(this).text();
+        var nomeContact = $(this).find(".contact").text();
+        nome = nome.toLowerCase();
+        nomeContact = nomeContact.toLowerCase();
         //controllo se il nome inserito e presente nei contatti
-        if(nome.toLowerCase().includes(nomeContact).toLowerCase()){ //(errore)!!
+        if(nome.includes(nomeContact)){
           //se lo è mostro il contatto
-          $(this).show(".name-text");
+          $(this).show(".name");
         } else {
           //se non lo è lo nascondo
 
-          $(this).hide(".name-text");
+          $(this).hide(".name");
         }
       });
 
     } else {
       //se non c'è nessuna ricerca mostro tutti i contatti
-      $(".name-text").show();
+        $(".name").show();
     }
-});
+  });
 
+  function rispostaComputer(){
 
-
+      //clono il template del nuovoMessaggio
+      var messaggioRisposta = $(".template").clone();
+      //inserisco nel giusto span il testo del messaggioRisposta
+      messaggioRisposta.children(".message-text").text("ok");
+      //aggiungo al div template la classe recived
+      $(".template").addClass("recived");
+      //inserisco il messaggio all'interno del container
+      $(".chat-container").append(messaggioRisposta);
+  }
 
 
 });
