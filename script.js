@@ -27,7 +27,7 @@ $(document).ready(function(){
       //resetto l'input con una stringa vuota
       var testoMessaggio = $(".right-bottom-text input").val("");
 
-      setTimeOut(rispostaComputer, 3000);
+      rispostaComputer();
     }
 
 
@@ -38,16 +38,18 @@ $(document).ready(function(){
   $(".input-text-left").keyup(function(){
     //recupero il testo inserito nella ricerca
     var nome = $(this).val();
-    console.log(nome);
+
     if(nome.length != 0){
 
       $(".name").each(function(){
+
         //ricavo il nome ricercato
         var nomeContact = $(this).find(".contact").text();
+
         nome = nome.toLowerCase();
         nomeContact = nomeContact.toLowerCase();
         //controllo se il nome inserito e presente nei contatti
-        if(nome.includes(nomeContact)){
+        if(nomeContact.includes(nome)){
           //se lo è mostro il contatto
           $(this).show(".name");
         } else {
@@ -66,14 +68,48 @@ $(document).ready(function(){
   function rispostaComputer(){
 
       //clono il template del nuovoMessaggio
-      var messaggioRisposta = $(".template").clone();
+      var messaggioRisposta = $(".sent.template").clone();
+
       //inserisco nel giusto span il testo del messaggioRisposta
       messaggioRisposta.children(".message-text").text("ok");
+
       //aggiungo al div template la classe recived
-      $(".template").addClass("recived");
+      $(messaggioRisposta).removeClass("sent");
+      $(messaggioRisposta).addClass("recived");
       //inserisco il messaggio all'interno del container
       $(".chat-container").append(messaggioRisposta);
   }
+
+
+  //creo un div differente per ogni contatto nell'html
+  //imposto ogni conversazionenascosta di default
+  $(".conversazione").hide();
+  //imposto aperta solo la conversazionedi michele di default
+  $('.conversazione[data-nome="Michele"]').show();
+  //imposto il click del contatto
+  $(".name").click(function(){
+      //nascondo ogni sent template presente
+      // $(".sent.template").hide();
+      //trovo il nome del contatto cliccato
+      var nomeConve = $(this).find(".contact").text();
+      console.log(nomeConve);
+      //nascondo altri eventuali contatti già visibili in pagina
+      $(".conversazione").hide();
+      //mostro la conversazione del contatto cliccato
+      $('.conversazione[data-nome="' + nomeConve + '"]').show();
+      //cambio il nome del contatto della conversazione
+      $(".name-text-tre").children("h3").text(nomeConve);
+
+
+
+  });
+
+
+  //imposto il dropdown sull'html
+  //intercetto il clic sull'icona del messaggio
+  //aggiungo la classe active
+  //
+
 
 
 });

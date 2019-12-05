@@ -167,6 +167,8 @@ i:hover{
   padding: 20px;
   clear: both;
   margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .recived{
@@ -174,8 +176,10 @@ i:hover{
   float:left;
 }
 
-.recived.answer{
-  display: none;
+.fa-angle-down{
+    margin-right: 0;
+    font-size: 17px;
+
 }
 
 .active{
@@ -185,11 +189,33 @@ i:hover{
 .sent {
   background-color: lightgreen;
   float: right;
+  display: flex;
 }
 
 .template{
   display: none;
 }
+
+.info, .delete{
+    background-color: white;
+    padding: 15px 10px;
+
+}
+
+.info:hover{
+    background-color: lightgrey;
+}
+
+.delete:hover{
+    background-color: lightgrey;
+}
+
+.dropdown{
+    position: absolute;
+    top
+}
+
+
 
 .right-bottom{
   width: 100%;
