@@ -26,10 +26,11 @@ body{
 #right-side{
   width: 65%;
   height: 100%;
-  background-color: green;
+  background-image: url(https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow-y: visible;
 }
 
 .left-top, .right-top, .left-blue{
@@ -190,10 +191,12 @@ i:hover{
   background-color: lightgreen;
   float: right;
   display: flex;
+  position: relative;
 }
 
 .template{
   display: none;
+
 }
 
 .info, .delete{
@@ -212,7 +215,14 @@ i:hover{
 
 .dropdown{
     position: absolute;
-    top
+    top: 40px;
+    left: 60px;
+    display: none;
+    z-index: 2;
+}
+
+.dropdown.active{
+    display: block;
 }
 
 

@@ -27,7 +27,7 @@ $(document).ready(function(){
       //resetto l'input con una stringa vuota
       var testoMessaggio = $(".right-bottom-text input").val("");
 
-      rispostaComputer();
+      setTimeout(rispostaComputer, 1000);
     }
 
 
@@ -74,8 +74,10 @@ $(document).ready(function(){
       messaggioRisposta.children(".message-text").text("ok");
 
       //aggiungo al div template la classe recived
-      $(messaggioRisposta).removeClass("sent");
-      $(messaggioRisposta).addClass("recived");
+      messaggioRisposta.removeClass("sent");
+      messaggioRisposta.removeClass("template");
+      messaggioRisposta.addClass("recived");
+      console.log(messaggioRisposta);
       //inserisco il messaggio all'interno del container
       $(".chat-container").append(messaggioRisposta);
   }
@@ -106,9 +108,24 @@ $(document).ready(function(){
 
 
   //imposto il dropdown sull'html
-  //intercetto il clic sull'icona del messaggio
-  //aggiungo la classe active
-  //
+  //intercetto il clic sull'icona della freccia in giu nel messaggio
+  //tramite il document on aggiungo il mio template all'html
+  $(document).on('click', '.fa-angle-down', function(){
+      //a questo messaggio seleziono il fratello con classe dropdown
+      //aggiungo e rimuovo (toggle) la classe active dal fratello dropdown
+      $(this).siblings(".dropdown").toggleClass("active");
+  })
+
+ //intercetto il clic sulla voce delete
+  $(document).on('click', '.delete', function(){
+
+      $(this).closest(".sent").hide();
+
+});
+
+
+
+
 
 
 
